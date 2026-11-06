@@ -1,7 +1,7 @@
 # 09 — Nghiên cứu nội dung & nguồn tư liệu hình ảnh (giao thức bắt buộc)
 
 ## Thực trạng đã kiểm tra (pilot 1453, 2026-11-05) — nói thẳng
-- **Nội dung pilot viết theo trí nhớ, KHÔNG tra nguồn** (xem `output/pilot-1453/FACTS.md`, ghi rõ "chưa kiểm chứng"). Đủ cho thử giọng/style, **không đủ cho tập thật**.
+- **Nội dung pilot viết theo trí nhớ, KHÔNG tra nguồn** (xem `episodes/pilot-1453/FACTS.md`, ghi rõ "chưa kiểm chứng"). Đủ cho thử giọng/style, **không đủ cho tập thật**.
 - **Ảnh pilot = 1 ảnh**: tìm bằng 1 lần WebSearch rồi tải trực tiếp từ Wikimedia Commons. Đủ để thử, **chưa phải quy trình** đủ cho video 30–45 phút.
 - Tập thật cần số lượng tư liệu lớn hơn nhiều (ước tính phía dưới) và quy trình có kiểm chứng.
 
@@ -32,9 +32,9 @@ Quy tắc: **không dùng Google Images/Pinterest/ảnh không rõ giấy phép;
 Chất lượng: ưu tiên bản gốc ≥ 2000px cạnh dài (ảnh BnF pilot chỉ 1297×1851, mờ khi zoom → tìm bản cao hơn trên Gallica/Commons "original file").
 
 ## Quy trình thu thập tư liệu cho 1 tập
-1. Từ `research.md` + chương, lập **bảng nhu cầu hình** (`output/EPxxx/assets-needs.md`): mỗi chương cần gì (chân dung X, bản đồ Y, tài liệu Z).
+1. Từ `research.md` + chương, lập **bảng nhu cầu hình** (`episodes/EPxxx/assets-needs.md`): mỗi chương cần gì (chân dung X, bản đồ Y, tài liệu Z).
 2. Tìm theo bảng (Commons API trước, rồi các kho trên), lập danh sách ứng viên (thumbnail + licence + độ phân giải).
-3. **Trình người dùng danh sách ứng viên + dung lượng, xin phép tải cả lô**; tải về `output/EPxxx/archive/` + `archive.json` (hoặc `assets.json` nhiều mục).
+3. **Trình người dùng danh sách ứng viên + dung lượng, xin phép tải cả lô**; tải về `episodes/EPxxx/archive/` + `archive.json` (hoặc `assets.json` nhiều mục).
 4. Nếu một chương thiếu tư liệu → báo ngay: đổi chương (gộp/bỏ), hoặc dùng hình vẽ code (bản đồ/sơ đồ), hoặc khắc từ tranh PD gần nhất.
 5. Cổng trước khi dựng: mọi câu có hình (tư liệu thật hoặc hình code) và mọi tư liệu có licence trong bảng.
 

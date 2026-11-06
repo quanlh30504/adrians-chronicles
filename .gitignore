@@ -1,7 +1,7 @@
 # Git chỉ giữ TRI THỨC DÙNG CHUNG: CLAUDE.md, knowledge/, templates/, engines/, tools/.
-# MỌI SẢN PHẨM (video lẻ, series, pilot, âm thanh, hình, render) nằm trong output/ và KHÔNG push.
-output/*
-!output/.gitkeep
+# MỌI SẢN PHẨM (video lẻ, series, pilot, âm thanh, hình, render) nằm trong episodes/ và KHÔNG push.
+episodes/*
+!episodes/.gitkeep
 
 # Tư liệu bên thứ ba (khung/phụ đề video tham khảo, ảnh mẫu thư viện)
 knowledge/assets/ref-frames/

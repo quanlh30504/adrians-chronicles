@@ -21,7 +21,7 @@ Mục tiêu: nhạc chỉ tạo không khí; **người xem luôn tập trung v�
 | Vào/ra | fade-in 1.5 s, fade-out 3 s; đuôi 2 s ở cuối mỗi Part để crossfade bên CapCut |
 | Chỗ được to hơn | chỉ khi **không có lời**: cold-open 0–3 s, end card, 2 khoảnh khắc im lặng/nhạc nổi có chủ ý mỗi Part (≤ −10 dB so với mức chuẩn master) |
 | Master | -14 LUFS (mux.sh); không nâng nhạc để "bù" |
-Công cụ: `stock_audio.py fit` (chuẩn −16 LUFS, fade) rồi `mix` với `--music-db -22` (+ ducking mặc định), hoặc trong `mix.py` của project: nhạc → high-pass/EQ → side-chain theo envelope giọng (đã có mẫu ở `output/pilot-1453/mix.py`).
+Công cụ: `stock_audio.py fit` (chuẩn −16 LUFS, fade) rồi `mix` với `--music-db -22` (+ ducking mặc định), hoặc trong `mix.py` của project: nhạc → high-pass/EQ → side-chain theo envelope giọng (đã có mẫu ở `episodes/pilot-1453/mix.py`).
 
 ## 3. Kiểm tra (cổng bắt buộc trước khi giao Part)
 1. **Whisper trên bản mix cuối** (`faster-whisper base.en`) phải nhận lại đúng lời kể (không mất/nhầm từ). Pilot đã làm bước này.
@@ -31,7 +31,7 @@ Công cụ: `stock_audio.py fit` (chuẩn −16 LUFS, fade) rồi `mix` với `-
 Nếu fail → hạ nhạc thêm 2–3 dB hoặc đổi track; **không nâng giọng quá −14 LUFS master để cứu**.
 
 ## 3b. Kết quả thử thực tế (pilot 1453 v6, 2026-11-05)
-- Cách chạy: `MUSIC=<file đã fit> OUT=<tên> python mix.py` (mẫu trong `output/pilot-1453/mix.py`): high-pass 120 Hz, khoét −3 dB 1–4 kHz (trừ 0.3× dải), low-pass 12 kHz; nhạc ở khoảng nghỉ = **−14 dB** so với RMS giọng, **ducking thêm −8 dB** khi giọng nói (attack 50 ms, release 0.6 s), dip thêm −9 dB ở khoảnh khắc im lặng trước loupe.
+- Cách chạy: `MUSIC=<file đã fit> OUT=<tên> python mix.py` (mẫu trong `episodes/pilot-1453/mix.py`): high-pass 120 Hz, khoét −3 dB 1–4 kHz (trừ 0.3× dải), low-pass 12 kHz; nhạc ở khoảng nghỉ = **−14 dB** so với RMS giọng, **ducking thêm −8 dB** khi giọng nói (attack 50 ms, release 0.6 s), dip thêm −9 dB ở khoảnh khắc im lặng trước loupe.
 - Đo (đoạn có lời 4–36 s, giọng −15.0 LUFS): **Teller of the Tales −34.9 LUFS (chênh 19.9 LU)**, Sinfonia Number 5 −33.6 (18.6 LU), Staring at the Night Sky −34.4 (19.4 LU) → cả ba vượt ngưỡng ≥14 LU.
 - Whisper trên bản mix cuối: **cả ba nhận đúng 100% lời** (SequenceMatcher = 1.0).
 - Độ to gốc của các track chênh rất nhiều (probe: Teller −22.3, Sinfonia −14.3, Night Sky −10.6 LUFS) → **luôn `fit` (chuẩn −16 LUFS) và canh theo RMS giọng**, không đặt mức cố định cho mọi track. Teller of the Tales có độ to ổn định nhất theo thời gian (−23…−25 LUFS ngắn hạn), phù hợp làm nền dài.

@@ -1,9 +1,9 @@
 # 12 — Runbook: cách làm một tập (dùng cho EP001 và mọi tập sau)
 
-Nguyên tắc vận hành: **bạn duyệt ở các cổng (★), agent làm phần còn lại**. Mỗi tập là một thư mục `output/EPxxx-slug/`. Agent không chuyển sang bước sau khi cổng ★ trước chưa được duyệt.
+Nguyên tắc vận hành: **bạn duyệt ở các cổng (★), agent làm phần còn lại**. Mỗi tập là một thư mục `episodes/EPxxx-slug/`. Agent không chuyển sang bước sau khi cổng ★ trước chưa được duyệt.
 
 ## Việc cần biết trước khi bắt đầu (trung thực về hiện trạng)
-- **Đã chạy ổn:** giọng (Kokoro `bm_george`), hệ font, style khắc + archive light table, SFX/nhạc (stock-audio), mix + kiểm bằng Whisper, render theo Part, cổng `check_subsync`. Bằng chứng: `output/pilot-1453/` (42 s).
+- **Đã chạy ổn:** giọng (Kokoro `bm_george`), hệ font, style khắc + archive light table, SFX/nhạc (stock-audio), mix + kiểm bằng Whisper, render theo Part, cổng `check_subsync`. Bằng chứng: `episodes/pilot-1453/` (42 s).
 - **Chưa có (sẽ phải xây trong EP001):**
   1. Pilot là một cảnh viết tay 42 s. Tập 30–45 phút cần **bộ cảnh dùng lại được + dựng theo dữ liệu** (kịch bản chia chương → danh sách cảnh → render từng Part). EP001 sẽ vừa là video vừa là lúc xây "episode engine" từ `pilot-1453`.
   2. **Chân dung/người/đám đông**: style khắc hiện chỉ vẽ tốt bản đồ, kiến trúc, vật thể. Cần công cụ `engrave-from-image` (khắc từ tranh PD thật) — backlog ở file 09. Trước khi có, chân dung được đưa bằng cảnh **archive light-table** (tranh thật) chứ chưa khắc.
@@ -12,12 +12,12 @@ Nguyên tắc vận hành: **bạn duyệt ở các cổng (★), agent làm ph�
 - **Nhạc nền:** mặc định dùng **một track duy nhất và lặp lại** (quyết định của người dùng 2026-11-05): "Teller of the Tales". Xem file 10.
 
 ## Quy trình theo cổng
-**0. Kiểm tra môi trường** (đầu mỗi phiên trên máy mới) — file 00; chạy lại `output/pilot-1453/build.sh` nếu nghi ngờ.
+**0. Kiểm tra môi trường** (đầu mỗi phiên trên máy mới) — file 00; chạy lại `episodes/pilot-1453/build.sh` nếu nghi ngờ.
 
 **1. Chọn chủ đề + brief ★**
 - Nói với agent: *"Đề xuất 5 chủ đề cho tập 1, chấm điểm theo file 03, ưu tiên chủ đề nhiều tư liệu public domain."* Agent dùng `yt-viral` + `yt-plan`, trả bảng chấm điểm (≥16/20, Chất liệu ≥4) và hỏi bạn chọn.
 - Gợi ý tự nhiên cho EP001: **The Fall of Constantinople (1453)** — pilot đã có tư liệu, bản đồ, giọng và mở bài; nhưng chỉ nên chọn nếu bạn thích chủ đề, vì tập đầu cần hấp dẫn thật.
-- Đầu ra: `output/EP001-slug/brief.md` (từ `templates/episode-brief.md`). **Bạn duyệt brief.**
+- Đầu ra: `episodes/EP001-slug/brief.md` (từ `templates/episode-brief.md`). **Bạn duyệt brief.**
 
 **1b. Chọn style ★ (mới, mỗi tập)**: agent cho xem thư viện mẫu (file 14), người dùng chọn style cho tập này → `STYLE.md`.
 
@@ -57,11 +57,11 @@ Nguyên tắc vận hành: **bạn duyệt ở các cổng (★), agent làm ph�
 - Mỗi lệnh nêu **mã tập + bước**: "EP001 bước 2: nghiên cứu".
 - Muốn đổi quyết định đã khóa (giọng, font, style): nói rõ "đổi X", agent sẽ cập nhật knowledge + decision log.
 - Gặp lỗi (chữ lệch, tiếng to…): mô tả triệu chứng + thời điểm (mm:ss); agent tìm nguyên nhân, sửa, và thêm cổng kiểm nếu chưa có (như `check_subsync`).
-- Nếu một phiên bị ngắt: nói "tiếp tục EP001"; agent đọc `CLAUDE.md` → `output/EP001/` (brief/research/script/manifest) và tiếp tục từ cổng gần nhất.
+- Nếu một phiên bị ngắt: nói "tiếp tục EP001"; agent đọc `CLAUDE.md` → `episodes/EP001/` (brief/research/script/manifest) và tiếp tục từ cổng gần nhất.
 
 ## Thư mục tập chuẩn
 ```
-output/EP001-slug/
+episodes/EP001-slug/
   brief.md · research.md · script.md · FACTS.md · assets-needs.md · assets-licenses.md
   archive/            # tư liệu thật + archive.json
   shots/              # shot script mỗi Part
@@ -69,4 +69,4 @@ output/EP001-slug/
   parts/              # EP001-P1.mp4 …  + manifest.md
   package.md          # title, mô tả, tags, chapters, credit, thumbnail brief
 ```
-Khuôn code: copy từ `output/pilot-1453/` (index.html, film.js, engine/, fonts/, mix.py, build.sh, tools/).
+Khuôn code: copy từ `episodes/pilot-1453/` (index.html, film.js, engine/, fonts/, mix.py, build.sh, tools/).

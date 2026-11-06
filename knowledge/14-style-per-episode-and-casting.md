@@ -4,10 +4,10 @@
 
 ## 1. Cổng "Chọn style" (★ bắt buộc ở đầu mỗi tập, ngay sau brief)
 1. Agent trình bày **thư viện mẫu** (bảng dưới) kèm clip/ảnh mẫu thật để người dùng xem (gửi file bằng SendUserFile hoặc mở ảnh). Với style mới: dựng mẫu ≤40 s trên đoạn mở bài của tập đó.
-2. Người dùng chọn style → ghi vào `brief.md` mục **Style** + dòng trong Decision log (file 01) + `output/EPxxx/STYLE.md` (palette, font, camera, mẫu mở đầu, khung SFX).
+2. Người dùng chọn style → ghi vào `brief.md` mục **Style** + dòng trong Decision log (file 01) + `episodes/EPxxx/STYLE.md` (palette, font, camera, mẫu mở đầu, khung SFX).
 3. Không dựng gì trước khi style được chọn. Không áp style tập trước cho tập sau nếu chưa hỏi.
 
-## 2. Thư viện style (mẫu có sẵn trong `output/EP001-fall-of-constantinople/styletest/`)
+## 2. Thư viện style (mẫu có sẵn trong `episodes/EP001-fall-of-constantinople/styletest/`)
 | Style | Mẫu | Hợp với | Ghi chú dựng |
 |---|---|---|---|
 | **Low-poly Isometric Island (3D)** (từng chọn cho EP001, sau đó đổi sang Pop-up 2026-11-06) | `lowpoly/` + `TEST_lowpoly.mp4` | chiến trận, thành phố, đế chế, nhiều nhân vật nhỏ | three.js, camera isometric; render nặng (~5–6 phút/36 s ở SSAA 1.5) |
@@ -15,7 +15,7 @@
 | **Picture Book (tranh minh họa)** | `picturebook/` + `TEST_picturebook.mp4` | nhân vật/đời sống, ấm áp | render nhanh (~79 s/36 s) |
 | **Paper-cut (giấy cắt)** | `papercut/` + `TEST_papercut.mp4` | cổ tích, phương Đông | người dùng đánh giá chưa ưng ở lần thử |
 | **Woodcut (khắc gỗ)** | `woodcut/` + `TEST_woodcut.mp4` | trung cổ, nghiêm | người dùng chưa ưng |
-| **Engraving + Archive Light Table** (cũ) | `output/pilot-1453/`, `plan/` | tài liệu, tư liệu thật | bị đánh giá nhiều chữ, ít hình |
+| **Engraving + Archive Light Table** (cũ) | `episodes/pilot-1453/`, `plan/` | tài liệu, tư liệu thật | bị đánh giá nhiều chữ, ít hình |
 | *Cartoon "nhân vật búp bê" 2D (kiểu video tham khảo)* | khung trong `knowledge/assets/ref-frames/` nếu có | kịch nhiều nhân vật, thoại | mẫu *chưa* dựng bằng code |
 Mọi mẫu mới sau này: thêm một dòng vào bảng + lưu thư mục mẫu.
 

@@ -48,7 +48,7 @@
 - Chủ đề nạn nhân/thảm họa: thoại hài nhắm vào quyền lực/sự vô lý, **không** vào người chết.
 
 ## 5. Dàn nhân vật (bắt buộc làm TRƯỚC khi viết script) — `bible.md` của tập
-Mỗi tập có `output/EPxxx/bible.md` gồm:
+Mỗi tập có `episodes/EPxxx/bible.md` gồm:
 1. **Danh sách nhân vật** (4–10): tên, vai, tuổi/ngoại hình theo tư liệu, **tính cách một câu**, **muốn gì / sợ gì**, **cách nói** (độ dài câu, kiểu chơi chữ, câu cửa miệng), quan hệ với người khác, **giọng TTS đã chọn**.
 2. **Model sheet mô tả để dựng hình**: màu áo, phụ kiện đặc trưng (silhouette đọc được từ xa), tỉ lệ, biểu cảm chính. Ảnh model sheet duyệt trước khi dựng cảnh.
 3. **Kiến trúc & đạo cụ chính**: mỗi công trình/vật quan trọng có mô tả đủ để dựng (hình khối, vật liệu, màu, kích thước tương đối, chi tiết nhận diện), dựa trên tư liệu thật (ghi nguồn).

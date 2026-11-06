@@ -12,7 +12,7 @@ Hỏi bằng AskUserQuestion, **theo từng nhóm tài sản** (có thể chọn
 | Sự kiện/hiệu ứng | cháy, nổ, lễ hội, thời tiết, đám đông… | như trên |
 - Nêu rõ **đánh đổi**: (A) nhanh, nhất quán tuyệt đối, nhưng hình đơn giản/hình học; (B) đẹp & nhiều chi tiết hơn, nhưng cần thêm vòng tay người dùng + nguy cơ lệch style/giấy phép; (C) nhanh nhất.
 - Khuyến nghị mặc định: (A) cho đạo cụ hình học/bối cảnh; (B) cho nhân vật chính và cảnh "ăn tiền" nếu người dùng muốn chất lượng cao hơn. Hỏi 1 lần cho cả tập, ghi kết quả vào `bible.md` mục **Nguồn hình** (bảng: tài sản → A/B/C → trạng thái).
-- Với (B): agent **xuất trọn gói** `output/EPxxx/art-brief/` (xem §3) và một danh sách đánh số; người dùng dán ảnh về theo mã.
+- Với (B): agent **xuất trọn gói** `episodes/EPxxx/art-brief/` (xem §3) và một danh sách đánh số; người dùng dán ảnh về theo mã.
 
 ## 2. Điều kiện chung BẮT BUỘC trong MỌI prompt (copy nguyên khối "STYLE LOCK" của tập vào đầu mỗi prompt)
 1. **Cùng style cả video**: mở đầu bằng khối `STYLE LOCK` lấy từ `STYLE.md` của tập (tên style, chất liệu, độ dày viền, bảng màu mã hex, kiểu đổ bóng, mức chi tiết). Không đổi từ ngữ giữa các prompt. Kèm 1–2 ảnh tham chiếu (model sheet đã duyệt/ảnh mẫu style) và dòng "match the attached reference exactly".
@@ -30,14 +30,14 @@ Hỏi bằng AskUserQuestion, **theo từng nhóm tài sản** (có thể chọn
 13. **Số lượng chính xác**: "exactly one character", "exactly N items" khi vẽ lưới.
 14. **Tên tệp** do người dùng đặt theo mã trong brief (vd. `CH-03-mehmed-closed.png`) để agent ghép tự động.
 
-## 3. Cấu trúc gói prompt agent phải xuất (`output/EPxxx/art-brief/`)
+## 3. Cấu trúc gói prompt agent phải xuất (`episodes/EPxxx/art-brief/`)
 - `00-README.md`: cách dùng, khối STYLE LOCK, danh sách ảnh tham chiếu cần đính kèm, công cụ gợi ý, hạn chế, cách đặt tên tệp, cách dán về.
 - `assets.csv`: mỗi dòng 1 tài sản — `id, loại(character|prop|set|fx), tên, cảnh dùng, cỡ mục tiêu (đơn vị so với khung), biến thể cần (closed/open/…), ghi chú lịch sử (nguồn tham khảo thật)`.
 - `prompts/<id>.md`: **một prompt hoàn chỉnh bằng tiếng Anh** (dán thẳng vào công cụ), gồm: STYLE LOCK → mô tả nhân vật/vật (tuổi, trang phục, màu hex, phụ kiện, biểu cảm) → pose/góc → điều kiện §2 → negative prompt. Thêm 1 dòng "Historical accuracy notes" (nguồn tham chiếu thật, vd. "Mehmed II: green-and-gold turban, per Bellini portrait").
 - **Nhóm prompt theo công cụ** nếu người dùng nói công cụ: ghi hậu tố cú pháp riêng (vd. tham số tỉ lệ, seed); khi chưa biết, viết trung lập.
 - **Bối cảnh (set)**: thường gồm **các lớp tách rời** (nền xa, lớp giữa, lớp gần) — xuất mỗi lớp một prompt với nền trắng/nền trong, ghi **thứ tự lớp** và **tỉ lệ khớp nhau**; phông liền cho khung trước: nền không trắng được, ghi rõ "full-bleed background, no characters".
 - Bảng cỡ gợi ý: nhân vật 2:3–3:5 (cao); đạo cụ lớn (tàu, pháo, tháp) 4:3–16:9; tường/panorama 3:1 (rộng); phông xa 16:9.
-- **Thư mục nhập về**: `output/EPxxx/art-in/` (ảnh gốc, không sửa) → `art-cut/` (đã cắt) → `art-ready/` (đã đổi cỡ, đặt tên engine).
+- **Thư mục nhập về**: `episodes/EPxxx/art-in/` (ảnh gốc, không sửa) → `art-cut/` (đã cắt) → `art-ready/` (đã đổi cỡ, đặt tên engine).
 
 ## 4. Nhập ảnh về: agent tự đọc → cắt → đổi cỡ → kiểm tra (người dùng chỉ việc dán/đặt file)
 Quy trình `tools/ingest_art.py` (viết khi cần; dùng PIL/numpy/opencv hoặc rembg nếu có; **hỏi trước khi cài thư viện**):
