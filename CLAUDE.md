@@ -42,13 +42,18 @@ Kênh YouTube **tiếng Anh** về lịch sử thế giới: nhân vật, đế 
 ## Quy trình ngắn (chi tiết ở file 04)
 `Ý tưởng → yt-plan/yt-viral → research → yt-script → yt-retention → yt-chapters → lemo-opuscar (shot script + dựng, theo Part) → voice (1 giọng khóa) → render từng Part → CapCut ghép → yt-package/yt-seo → upload → yt-audit`
 
-## Cấu trúc thư mục
+## Cấu trúc thư mục (định hình lại 2026-11-06)
 ```
-knowledge/            # tri thức chung (file trên) — sửa khi có quyết định mới
-episodes/EPxxx-slug/  # mỗi tập: brief.md, research.md, script.md, shots/, audio/, parts/, package.md
-templates/            # episode-brief.md, part-manifest.md
+CLAUDE.md, knowledge/, templates/   # TRI THỨC CHUNG  → có trong git
+engines/                            # engine dựng dùng lại (vd. engines/popup/) → có trong git
+tools/                              # công cụ dùng chung (check_subsync.py, ingest_art.py…) → có trong git
+output/                             # MỌI SẢN PHẨM — KHÔNG vào git (ignore cả thư mục)
+  <video-don>/                      # video lẻ: output/EP001-fall-of-constantinople/ (brief, research, script, bible, audio/, parts/, …)
+  <series>/                         # video nhiều tập: một thư mục lớn
+    <ep-con>/                       # các tập con bên trong: output/<series>/EP01-slug/
+  pilot-1453/                       # bản thử cũng là output
 ```
-Đặt tên tập: `EP001-slug-ngan-gon`. Mỗi tập có `brief.md` (từ `templates/episode-brief.md`) trước khi làm bất cứ gì.
+Quy ước: **mọi thứ do dự án tạo ra cho một video (kể cả brief/script/bible/mã dựng riêng của tập) nằm trong `output/`**, và bị ignore. Cái gì muốn dùng lại cho tập sau (luật, quy trình, engine, công cụ, template) phải **nâng lên** `knowledge/`, `engines/`, `tools/` hoặc `templates/` — đó mới là phần vào git. Đặt tên tập: `EP001-slug-ngan-gon`. Mỗi tập có `brief.md` (từ `templates/episode-brief.md`) trước khi làm bất cứ gì.
 
 ## Cách cập nhật tri thức
 Khi người dùng đưa quyết định/ưu tiên mới (giọng, style, kênh tham khảo, chiến lược): **cập nhật file tương ứng trong `knowledge/`** và ghi dòng vào "Decision log" cuối file 01. Không để tri thức chỉ nằm trong chat.

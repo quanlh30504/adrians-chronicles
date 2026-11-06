@@ -1,6 +1,6 @@
 # 06 — Kênh tham khảo (học cấu trúc, KHÔNG sao chép nội dung/giọng)
 
-Cách dùng: trước mỗi tập hoặc khi cần ý tưởng → dùng `yt-audit`/`yt-viral`/competitor research để phân tích các kênh dưới đây (tiêu đề, thumbnail, hook 30s, cấu trúc chương, độ dài, retention), rút bài học vào `episodes/EPxxx/brief.md`. Xác minh URL/số liệu hiện tại trước khi trích (danh sách do người dùng cung cấp, chưa kiểm chứng).
+Cách dùng: trước mỗi tập hoặc khi cần ý tưởng → dùng `yt-audit`/`yt-viral`/competitor research để phân tích các kênh dưới đây (tiêu đề, thumbnail, hook 30s, cấu trúc chương, độ dài, retention), rút bài học vào `output/EPxxx/brief.md`. Xác minh URL/số liệu hiện tại trước khi trích (danh sách do người dùng cung cấp, chưa kiểm chứng).
 
 ## Nhóm A — Storytelling / tiểu sử / lịch sử thế giới (ưu tiên cao)
 | Kênh | Nội dung | Học gì |

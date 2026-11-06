@@ -5,7 +5,7 @@
 |---|---|---|---|
 | 0 | Hiểu thị trường, kênh đối thủ | `youtube-agent:yt-audit`, `yt-viral`, `youtube` (competitor research); đọc `06-reference-channels.md` | ghi chú học hỏi |
 | 1 | Chiến lược & lịch nội dung | `yt-plan` | content calendar |
-| 2 | Chọn/đánh giá ý tưởng | `yt-viral` + chấm điểm ở file 03 | `episodes/EPxxx/brief.md` |
+| 2 | Chọn/đánh giá ý tưởng | `yt-viral` + chấm điểm ở file 03 | `output/EPxxx/brief.md` |
 | 3 | Nghiên cứu sự thật | WebSearch/WebFetch (+ `itv-research` nếu cần dossier sâu) | `research.md` (nguồn, ngày, số liệu, tranh cãi) |
 | 2b | **Chọn style ★ (mỗi tập)** | cho xem thư viện mẫu (file 14), người dùng chọn | `STYLE.md` + mục Style trong brief |
 | 3c | **Bible nhân vật + kiến trúc** | file 13 §5; chọn giọng nhân vật (file 14 §5) | `bible.md` (model sheet, set list, giọng, gag) |
@@ -34,9 +34,9 @@
 ## Bài học kỹ thuật từ pilot (Windows, 2026-11-05)
 - **Git Bash làm hỏng đường dẫn bắt đầu bằng `/`**: luôn `export MSYS_NO_PATHCONV=1 PYTHONUTF8=1` trước khi chạy tool lemo; chạy `setup.sh` từ thư mục skill, không từ trong `$LIB`. Tên thư mục dự án có dấu `’` vẫn chạy được với still/video/mux; script python truyền đường dẫn qua `cd` vào thư mục rồi dùng đường dẫn tương đối nếu lỗi.
 - `asr_check.py` cần `PYTHONUTF8=1` (nếu không lỗi ký tự mũi tên). Năm đọc thành chữ ("fourteen fifty-three") luôn lệch với "1453" khi kiểm: chỉ diff mong đợi, hoặc thêm trường `asr`.
-- Cấu trúc project chuẩn: `index.html` + `film.js` (render theo thời gian) + `assets/audio/sfx/` (stock-audio) + `engine/` (copy từ `styles/engraving/demo/engine`) + `fonts/` + `archive/` (+ `archive.json`: file, label_top, reading, source) + `lines.json` + `mix.py` + `build.sh`. Dùng `pilot-1453/` làm khuôn cho tập mới.
+- Cấu trúc project chuẩn: `index.html` + `film.js` (render theo thời gian) + `assets/audio/sfx/` (stock-audio) + `engine/` (copy từ `styles/engraving/demo/engine`) + `fonts/` + `archive/` (+ `archive.json`: file, label_top, reading, source) + `lines.json` + `mix.py` + `build.sh`. Dùng `output/pilot-1453/` làm khuôn cho tập mới.
 - Tư liệu archive: tải từ Wikimedia Commons bằng `Special:FilePath/<tên>?width=2400` (cần User-Agent), **xin phép người dùng trước khi tải**, ghi nguồn vào `CREDITS`. Ảnh BnF tải về chỉ 1297×1851: ưu tiên nguồn độ phân giải cao hơn cho tập thật.
-- Font OFL lấy từ `raw.githubusercontent.com/google/fonts/main/ofl/...` (đã có trong `pilot-1453/fonts/`).
+- Font OFL lấy từ `raw.githubusercontent.com/google/fonts/main/ofl/...` (đã có trong `output/pilot-1453/fonts/`).
 - Hướng dẫn thư viện: không để lộ chữ ký/credit LemoLab trong phim của kênh.
 
 ## Quy ước làm việc cho agent

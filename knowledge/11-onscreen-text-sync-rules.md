@@ -3,7 +3,7 @@
 ## Sự cố đã gặp (2026-11-05) và nguyên nhân
 - Triệu chứng: chữ phụ đề hiện **trước** tấm giấy nền vài chục ms (và biến mất trễ hơn nền).
 - **Nguyên nhân: lỗi của tôi, không phải do font.** Hàm `engraveText` của engine đặt lại `ctx.globalAlpha` về tham số `alpha` của nó (mặc định 1). Từ bản v2, khi đổi phụ đề từ `writeScript(..., {alpha: a})` sang `engraveText(...)` tôi không truyền `alpha`, nên tấm giấy mờ dần theo `globalAlpha = a` nhưng chữ luôn đậm 100% ngay từ khung đầu. Bản v1 (script) đồng bộ vì có truyền alpha. Đo lại bản lỗi: ở t0+0.05 s chữ gần như đen (pixel ≈ 11) trong khi nền mới hiện ≈ 20%.
-- Sửa: **vẽ tấm giấy + chữ vào một lớp offscreen rồi ghép bằng MỘT alpha** (`subLayer` trong `pilot-1453/film.js`). Thêm cổng tự động `pilot-1453/tools/check_subsync.py` (đã xác nhận: bản lỗi fail với vi phạm 87, bản sửa pass).
+- Sửa: **vẽ tấm giấy + chữ vào một lớp offscreen rồi ghép bằng MỘT alpha** (`subLayer` trong `output/pilot-1453/film.js`). Thêm cổng tự động `output/pilot-1453/tools/check_subsync.py` (đã xác nhận: bản lỗi fail với vi phạm 87, bản sửa pass).
 
 ## Quy tắc (bắt buộc)
 1. **Chữ và nền của nó (tấm giấy, tấm chú thích tối, khung nhãn) luôn là MỘT lớp, MỘT alpha, MỘT bộ mốc thời gian (t0/t1/easing).** Không bao giờ dựa vào `ctx.globalAlpha` rồi gọi `engraveText`/`writeScript`/hàm engine khác — chúng tự reset alpha. Hoặc truyền `alpha` tường minh, hoặc (ưu tiên) vẽ vào canvas offscreen rồi `drawImage` với alpha.

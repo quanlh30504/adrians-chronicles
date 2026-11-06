@@ -6,12 +6,12 @@
 - **SFX tổng hợp bằng code (`core/audio/sfx.py` của lemo-opuscar) chỉ là phương án dự phòng** khi stock-audio không có tiếng cần thiết, hoặc để lấp chỗ trống rất nhỏ. Pilot 1453 v1–v2 dùng SFX tổng hợp; **từ v3 toàn bộ SFX lấy bằng stock-audio** (bảng bên dưới). Nhạc nền của pilot vẫn là nhạc tự tạo bằng code (Karplus-Strong); tập thật nên thử nhạc từ stock-audio (lute/harpsichord/cello) và so sánh.
 - Nhạc: khớp tông kênh (điềm tĩnh, bí ẩn, cổ điển): đàn dây gảy/lute, viola da gamba, organ phòng, cello solo, harpsichord; tránh "piano + dàn dây" chung chung. Từ khóa gợi ý (tiếng Anh): `medieval`, `lute`, `harpsichord`, `baroque`, `cello`, `dark ambient`, `mysterious`, `ancient`, `cinematic calm`.
 - **Tên SFX theo chất liệu của style** (xem STYLE.md engraving & archive-lighttable): giấy (peel, slip tap, tissue rustle, page turn), kim loại/burin (hiss, tick), bút/mực (pen scratch), nước/cọ (water plip, wet brush), kính (glass set-down, ring), phòng xưởng (clock tick, room tone). Dùng `search "<từ khóa>" --type sfx --max-duration 3`.
-- **Credit:** Mixkit (không cần credit; nhạc không dùng cho TV/radio/game); Incompetech = CC BY 4.0 **bắt buộc ghi credit**. Hỏi/ưu tiên `--no-credit` cho kênh để mô tả video gọn; nếu dùng Incompetech, dán `attribution_text` vào mô tả. Mọi track ghi vào `episodes/EPxxx/assets-licenses.md`/`CREDITS.md`.
+- **Credit:** Mixkit (không cần credit; nhạc không dùng cho TV/radio/game); Incompetech = CC BY 4.0 **bắt buộc ghi credit**. Hỏi/ưu tiên `--no-credit` cho kênh để mô tả video gọn; nếu dùng Incompetech, dán `attribution_text` vào mô tả. Mọi track ghi vào `output/EPxxx/assets-licenses.md`/`CREDITS.md`.
 - Nguồn thủ công (Pixabay, YouTube Audio Library, Chosic, Musopen, FMA, Bensound…): skill chỉ đưa link, **người dùng tải tay rồi `import`**. Không bypass bot-check/login.
 - Mix: voice là ưu tiên số 1; nhạc ~ nửa mức thoại, ducking theo giọng; foley ngắn, tắt/hạ ở 2 khoảnh khắc im lặng (trước loupe/bước ngoặt và sau câu cuối). Master -14 LUFS (mux.sh).
 
 ## Đã áp dụng trong pilot 1453 (2026-11-05)
-12 SFX Mixkit (không cần credit, license "Mixkit Sound Effects Free"), tải bằng `stock_audio.py download <id> --type sfx --out pilot-1453/assets/audio/sfx` (`CREDITS.md` + `stock_audio_manifest.json` nằm cùng thư mục). Bảng ánh xạ cảnh → SFX (dùng lại cho tập thật):
+12 SFX Mixkit (không cần credit, license "Mixkit Sound Effects Free"), tải bằng `stock_audio.py download <id> --type sfx --out output/pilot-1453/assets/audio/sfx` (`CREDITS.md` + `stock_audio_manifest.json` nằm cùng thư mục). Bảng ánh xạ cảnh → SFX (dùng lại cho tập thật):
 | Hành động trên hình | Mixkit id |
 |---|---|
 | burin / bút khắc, nét khắc, chữ được cắt | 2367 Writing with a pen on paper; 2369 Writing scribble; 3194 Writing pencil; 809 Metal Scrape (nhấc burin) |

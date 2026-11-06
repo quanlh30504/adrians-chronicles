@@ -20,7 +20,7 @@ Video 30–45′ render một lần rất lâu, dễ hỏng, khó sửa. → **C
 ## Số đo thực tế (pilot 1453, 2026-11-05, máy của người dùng)
 - Render hình 1080p/24fps, 2 worker: **42.7 giây phim ≈ 104 giây render (~2.4× thời gian thực)**. Ngoại suy: Part 10 phút ≈ 25 phút nếu cảnh phức tạp như pilot; cảnh nặng hơn (nhiều roundel/khắc dày) có thể chậm hơn → thử `--workers 3`.
 - Phần dựng giọng + mix + mux ≈ dưới 1 phút cho 42 s.
-- **Cập nhật 2026-11-06:** EP001 (Pop-up) render 24 fps, 1920×1080, grain 0, `LEMO_COLOR=bt709`, mux −14 LUFS; Part 1/2/3 ≈ 11,2 / 8,9 / 7,9 phút; render ≈ 45 phút/Part (3 worker). **Quy trình tự động:** `episodes/EP001-.../tools/pipeline.sh`.
+- **Cập nhật 2026-11-06:** EP001 (Pop-up) render 24 fps, 1920×1080, grain 0, `LEMO_COLOR=bt709`, mux −14 LUFS; Part 1/2/3 ≈ 11,2 / 8,9 / 7,9 phút; render ≈ 45 phút/Part (3 worker). **Quy trình tự động:** `output/EP001-.../tools/pipeline.sh`.
 - **Lưu ý fps:** thư viện mặc định 24 fps (pilot dùng 24); tài liệu trên ghi 30 fps khóa → thống nhất: **chọn một fps cho cả kênh** (đề xuất 24 để render nhanh hơn 20% và hợp phong cách khắc/archive) và ghi vào Decision log. Pilot hiện tại: 1920×1080, 24 fps, -14 LUFS.
 
 ## Quy trình render hiệu quả
