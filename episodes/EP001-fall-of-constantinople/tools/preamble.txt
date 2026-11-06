@@ -1,0 +1,23 @@
+  // camera helpers: [px,py,pz, tx,ty,tz, fov, aper]
+  const cl = (x, z, o = {}) => { const d = o.d ?? .24, ang = o.ang ?? 0, h = o.h ?? .05, y = o.y ?? h + .02; return [x + d * Math.sin(ang) + (o.dx ?? 0), y, z + d * Math.cos(ang), x + (o.tx ?? 0), h, z, o.fov ?? 30, o.aper ?? 2.2]; };
+  const wide = (o = {}) => [o.x ?? 0, o.y ?? .11, Math.min(o.z ?? .42, .44), o.tx ?? 0, o.ty ?? .06, o.tz ?? .1, o.fov ?? 30, o.aper ?? 2.4];
+  // dialogue coverage: one shot per line, cutting to the speaker; variants rotate so no two cuts look alike
+    function cover(a, b, pos, base = {}) {
+    const out = [];
+    for (let n = a; n <= b; n++) {
+      const l = L(n), nm = l.as || l.speaker.toLowerCase().replace(/ /g, ''), p = pos[nm]; const s = n === a ? l.t0 - 1.5 : l.t0 - .06, e = n === b ? l.t1 + .9 : nxt(n) - .06;
+      let A1, B1; const v = n % 4;
+      if (!p) { A1 = wide({ z: .5 }); B1 = wide({ z: .46 }); }
+      else { const [x, z, hh] = p; const h = hh ?? .05, side = (v % 2 ? 1 : -1);
+        if (v === 0) { A1 = cl(x, z, { d: .27, ang: .0, h, tx: -x * .5 }); B1 = cl(x, z, { d: .22, ang: .12 * side, h, tx: -x * .55 }); }
+        else if (v === 1) { A1 = cl(x, z, { d: .2, ang: -.2, h: h + .008, tx: -x * .5 }); B1 = cl(x, z, { d: .24, ang: -.08, h, tx: -x * .5 }); }
+        else if (v === 2) { A1 = [x * .5, h + .045, .46, x * .4, h, z, 30, 2.4]; B1 = [x * .4, h + .04, .41, x * .3, h, z, 30, 2.4]; }
+        else { A1 = cl(x, z, { d: .23, ang: .22, h, tx: -x * .5 }); B1 = cl(x, z, { d: .19, ang: .1, h: h + .006, tx: -x * .5 }); } }
+      out.push([s, e, A1, B1]);
+    }
+    return out;
+  }
+  const solC = i => C('sol' + i, .012, .022, A.spearman(['#e8664a', '#4f7fb8', '#e2ae3a', '#7a5a9a'][i % 4], i % 2), { ppm: 9000, border: 6, pad: 8 });
+  const ST = { wall: C('wall', .42, .075, A.stoneArt('#d8c8a6', .14), { ppm: 4200 }), tower: C('tower', .06, .11, A.stoneArt('#cfbe9a', .12), { ppm: 5200 }), houses: C('houses', .34, .055, A.housesArt, { ppm: 4200 }), tent: [C('tentR', .035, .04, A.tentArt('#e8664a')), C('tentW', .035, .04, A.tentArt('#fffdf2'))], ladder: C('lad', .014, .09, A.ladderArt, { ppm: 7000, border: 5, pad: 8 }) };
+  const add = (o) => { SC.push(o); return o; };
+

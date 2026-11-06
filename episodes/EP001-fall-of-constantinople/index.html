@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>EP001 · The Fall of Constantinople</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{position:absolute;left:0;top:0;display:block}</style>
+</head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import { makeFilm } from './film.js';
+const ctx = document.getElementById('c').getContext('2d');
+await Promise.all(['700 40px "Playfair Display"', 'italic 400 40px "Playfair Display"', '700 40px "Source Sans 3"', '600 40px "Source Sans 3"', '400 40px "Source Sans 3"', '600 40px "Lora"', 'italic 400 40px "Lora"'].map(f => document.fonts.load(f)));
+const list = await (await fetch('archive/archive.json')).json();
+const meta = {}, imgs = {};
+await Promise.all(list.map(async e => { meta[e.code] = e; const im = new Image(); im.src = 'archive/' + e.file; try { await im.decode(); imgs[e.code] = im; } catch { /* optional */ } }));
+const part = new URLSearchParams(location.search).get('part') || '1';
+const plan = await (await fetch('plan/part' + part + '.json')).json().catch(() => null);
+const timing = await (await fetch('timing/part' + part + '.json')).json().catch(() => null);
+const film = makeFilm({ imgs, meta, plan, timing });
+window.DUR = film.DUR; window.EV = film.EV; window.SB = film.SB;
+window.render = t => film.render(ctx, t);
+window.READY = true;
+</script></body></html>

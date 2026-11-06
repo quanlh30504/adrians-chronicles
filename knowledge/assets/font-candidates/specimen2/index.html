@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Header font sets</title>
+<style>
+@font-face{font-family:Bodoni;src:url(BodoniModa-VF.ttf);font-weight:400 900}
+@font-face{font-family:Bodoni;src:url(BodoniModa-Italic-VF.ttf);font-weight:400 900;font-style:italic}
+@font-face{font-family:Pinyon;src:url(PinyonScript-Regular.ttf)}
+@font-face{font-family:Cinzel;src:url(Cinzel.ttf);font-weight:400 900}
+@font-face{font-family:Playfair;src:url(PlayfairDisplay.ttf);font-weight:400 900}
+@font-face{font-family:Playfair;src:url(PlayfairDisplay-Italic.ttf);font-weight:400 900;font-style:italic}
+@font-face{font-family:Fell;src:url(IMFellEnglish.ttf)}
+@font-face{font-family:Fell;src:url(IMFellEnglish-Italic.ttf);font-style:italic}
+@font-face{font-family:FellSC;src:url(IMFellEnglishSC.ttf)}
+@font-face{font-family:Caslon;src:url(LibreCaslonText.ttf);font-weight:400 700}
+@font-face{font-family:Caslon;src:url(LibreCaslonText-Italic.ttf);font-weight:400 700;font-style:italic}
+@font-face{font-family:Lora;src:url(Lora.ttf);font-weight:400 700}
+@font-face{font-family:Lora;src:url(Lora-Italic.ttf);font-weight:400 700;font-style:italic}
+@font-face{font-family:SSerif;src:url(SourceSerif4.ttf);font-weight:200 900}
+@font-face{font-family:SSerif;src:url(SourceSerif4-Italic.ttf);font-weight:200 900;font-style:italic}
+@font-face{font-family:SSans;src:url(SourceSans3.ttf);font-weight:200 900}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+const ctx=document.getElementById('c').getContext('2d');
+// each role: [css font, letterSpacing px]
+const SETS=[
+ {n:"0  CURRENT  \u2014  Bodoni Moda + Pinyon (hard to read)",
+  title:["600 {S}px Bodoni",.16],sub:["italic 400 {S}px Bodoni",0],label:["600 {S}px Bodoni",.14],latin:["italic 400 {S}px Bodoni",0],note:["400 {S}px Pinyon",0],map:["italic 400 {S}px Bodoni",.2],sig:["600 {S}px Bodoni",.26]},
+ {n:"1  CINZEL + LORA  \u2014  monumental caps, warm italics",
+  title:["600 {S}px Cinzel",.14],sub:["italic 400 {S}px Lora",0],label:["600 {S}px Cinzel",.12],latin:["italic 400 {S}px Lora",0],note:["italic 400 {S}px Lora",0],map:["600 {S}px Cinzel",.2],sig:["600 {S}px Cinzel",.22]},
+ {n:"2  PLAYFAIR + SOURCE SANS  \u2014  elegant headline, clear small caps",
+  title:["700 {S}px Playfair",.1],sub:["italic 400 {S}px Playfair",0],label:["700 {S}px SSans",.14],latin:["italic 400 {S}px Playfair",0],note:["italic 400 {S}px Lora",0],map:["600 {S}px SSans",.2],sig:["700 {S}px Playfair",.2]},
+ {n:"3  LIBRE CASLON  \u2014  one family, classic book look",
+  title:["700 {S}px Caslon",.1],sub:["italic 400 {S}px Caslon",0],label:["700 {S}px Caslon",.14],latin:["italic 400 {S}px Caslon",0],note:["italic 400 {S}px Caslon",0],map:["italic 400 {S}px Caslon",.18],sig:["700 {S}px Caslon",.2]},
+ {n:"4  IM FELL ENGLISH  \u2014  authentic old-print texture (roughest)",
+  title:["400 {S}px FellSC",.12],sub:["italic 400 {S}px Fell",0],label:["400 {S}px FellSC",.12],latin:["italic 400 {S}px Fell",0],note:["italic 400 {S}px Fell",0],map:["400 {S}px FellSC",.16],sig:["400 {S}px FellSC",.2]},
+ {n:"5  SOURCE SERIF 4 + SOURCE SANS 3  \u2014  most modern and legible",
+  title:["700 {S}px SSerif",.1],sub:["italic 400 {S}px SSerif",0],label:["700 {S}px SSans",.14],latin:["italic 400 {S}px SSerif",0],note:["italic 400 {S}px SSerif",0],map:["600 {S}px SSans",.2],sig:["700 {S}px SSerif",.2]}];
+const need=new Set();SETS.forEach(s=>Object.values(s).forEach(v=>{if(Array.isArray(v))need.add(v[0].replace('{S}','30'))}));
+(async()=>{
+ await Promise.all([...need].map(f=>document.fonts.load(f)));
+ const T=(role,s,size,txt,x,y,al='center',track)=>{ctx.font=s[role][0].replace('{S}',size);ctx.letterSpacing=(track??s[role][1])*size+'px';ctx.textAlign=al;ctx.fillText(txt,x,y);ctx.letterSpacing='0px';};
+ window.render=()=>{
+  ctx.fillStyle='#d8c496';ctx.fillRect(0,0,1920,1080);
+  const rh=176;
+  SETS.forEach((s,i)=>{
+   const y=10+i*(rh+4);
+   ctx.save();ctx.shadowColor='rgba(60,40,20,.25)';ctx.shadowBlur=8;ctx.fillStyle='#ecdfbf';ctx.fillRect(20,y,1880,rh);ctx.restore();
+   ctx.fillStyle='#1c1510';ctx.font='700 17px SSans';ctx.textAlign='left';ctx.fillText(s.n,36,y+24);
+   // group 1: title + sub
+   T('title',s,50,'CONSTANTINOPLE.',470,y+98);
+   T('sub',s,24,'Anno Domini MCDLIII',470,y+138);
+   // group 2: figure label, latin, note
+   T('label',s,17,'FIG. 1  \u00b7  THE LAND WALLS',1050,y+62);
+   T('latin',s,20,'muri terrestres',1050,y+92);
+   T('note',s,29,'Two lines of wall, and',1050,y+126); T('note',s,29,'a moat before them.',1050,y+158);
+   // group 3: map labels + signature
+   T('map',s,15,'CORNU AUREUM',1590,y+70);T('map',s,15,'PROPONTIS',1590,y+98);
+   T('sig',s,21,"ADRIAN\u2019S CHRONICLES",1590,y+146);
+  });
+ };
+ window.DUR=1;window.READY=true;
+})();
+</script></body></html>

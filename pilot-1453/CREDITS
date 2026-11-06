@@ -1,0 +1,10 @@
+Pilot 1453 — third-party assets
+- Engraving engine, burin/plate/wash code: Lemo-Opuscar library (styles/engraving/demo/engine), copied into ./engine. Check the library LICENSE.
+- Voice: Kokoro TTS (kokoro-onnx), voice bm_george, en-gb, speed 0.78. Speech check: faster-whisper (base.en).
+- Fonts (all OFL, from github.com/google/fonts/ofl): Playfair Display, Source Sans 3, Lora. (Bodoni Moda and Pinyon Script files remain in fonts/ but are no longer used.)
+- Archive object: "Siege of Constantinople", BnF MS Francais 9087, fol. 207v (miniature, c. 1455; attributed to Jean Le Tavernier by some sources). Original artwork public domain. File via Wikimedia Commons "Siege_of_Constantinople_BnF_MS_Fr_9087.jpg". Note: Commons says the BnF's photographic reproduction may carry a photographer's claim in France although the BnF authorises use; re-check the Commons file page and BnF reuse terms before publishing.
+- Music: original, generated in code (Karplus-Strong plucked strings + additive bowed tone). No third-party music samples.
+- All map drawing (city plan, walls, tents, bombard) is original code-drawn art.
+- Subtitle font: Lora (OFL), github.com/google/fonts/ofl/lora.
+- Sound effects (v3): 12 Mixkit SFX via the stock-audio skill (ids 2367, 2369, 3194, 1104, 1105, 154, 2623, 1061, 1879, 809, 3087, 1311); licence "Mixkit Sound Effects Free", no attribution; full records in assets/audio/sfx/CREDITS.md. Room tone is synthetic.
+- Music bed (v6): "Teller of the Tales" by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/). Candidates also downloaded for audition: "Sinfonia Number 5" (Kevin MacLeod, CC BY 4.0), "Staring at the Night Sky" (Mixkit, Mixkit Music License, no credit). Records: assets/audio/music/CREDITS.md.

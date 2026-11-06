@@ -1,0 +1,64 @@
+# === Adrian's Chronicles: git chỉ giữ TRI THỨC + MÃ NGUỒN + VĂN BẢN. Output nặng KHÔNG vào git. ===
+
+# --- Output dựng/render (tái tạo được từ mã + script) ---
+**/out/
+**/parts/*.mp4
+**/parts/*.mov
+**/stills/
+**/frames/
+**/qc/
+**/styletest/
+**/lp/
+**/storyboard*.jpg
+**/TEST_*.mp4
+**/*.log
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.cache/
+
+# --- Âm thanh/video nhị phân (giọng, mix, nhạc, SFX: tạo lại bằng tts.py / stock-audio) ---
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.aac
+*.mp4
+*.mov
+*.mkv
+*.webm
+episodes/*/audio/**
+!episodes/*/audio/**/lines.json
+!episodes/*/audio/**/asr.json
+!episodes/*/audio/**/*.md
+episodes/*/assets/audio/**
+!episodes/*/assets/audio/**/CREDITS.md
+!episodes/*/assets/audio/**/stock_audio_manifest.json
+
+# --- Tư liệu hình tải về (tải lại theo archive.json / assets-licenses.md) ---
+episodes/*/archive/*.jpg
+episodes/*/archive/*.jpeg
+episodes/*/archive/*.png
+episodes/*/archive/*.tif*
+episodes/*/art-in/
+episodes/*/art-cut/
+episodes/*/art-ready/
+!episodes/*/art-brief/
+
+# --- Pilot cũ ---
+pilot-1453/out/
+pilot-1453/*.mp4
+pilot-1453/archive/*.jpg
+
+# --- Linh tinh ---
+Thumbs.db
+.DS_Store
+*.tmp
+
+# Font ứng viên đã loại (chỉ giữ ảnh specimen); font khóa nằm trong fonts/ của mỗi project
+knowledge/assets/font-candidates/**/*.ttf
+
+# Tư liệu bên thứ ba (khung/phụ đề video tham khảo, ảnh mẫu thư viện) — không đưa lên repo public
+knowledge/assets/ref-frames/
+knowledge/assets/alt-*.jpg
+knowledge/assets/impasto-official-reference.jpg

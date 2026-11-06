@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "file": "incompetech-music-USUAN1400020-Teller-of-the-Tales.mp3",
+      "path": "E:\\Adrian’s Chronicles\\pilot-1453\\assets\\audio\\music\\incompetech-music-USUAN1400020-Teller-of-the-Tales.mp3",
+      "source": "incompetech",
+      "type": "music",
+      "id": "USUAN1400020",
+      "title": "Teller of the Tales",
+      "artist": "Kevin MacLeod",
+      "tags": [
+        "Calming",
+        "Mysterious",
+        "Relaxed",
+        "Somber",
+        "Lute",
+        "Guitar",
+        "World"
+      ],
+      "duration_s": 212.375531,
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Teller%20of%20the%20Tales.mp3",
+      "page_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400020",
+      "license_url": null,
+      "attribution_required": true,
+      "attribution_text": "Music: \"Teller of the Tales\" by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "commercial_ok": true,
+      "license": {
+        "name": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+        "url": "https://incompetech.com/music/royalty-free/licenses/",
+        "attribution_required": true,
+        "attribution_template": "Music: \"{title}\" by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+        "allowed": [
+          "commercial use incl. monetised YouTube, film, games, broadcast — with credit"
+        ],
+        "not_allowed": [
+          "use without the credit (unless a paid no-attribution license is bought)"
+        ],
+        "note": "YouTube Content ID claims: see incompetech.com/music/royalty-free/youtube-contentid.html. Spotify podcast flags: dispute with licensor 'Kelvin Ruijters t/as Frequency'."
+      },
+      "downloaded_at": "2026-11-05T10:29:31+00:00"
+    },
+    {
+      "file": "incompetech-music-USUAN1100673-Sinfonia-Number-5.mp3",
+      "path": "E:\\Adrian’s Chronicles\\pilot-1453\\assets\\audio\\music\\incompetech-music-USUAN1100673-Sinfonia-Number-5.mp3",
+      "source": "incompetech",
+      "type": "music",
+      "id": "USUAN1100673",
+      "title": "Sinfonia Number 5",
+      "artist": "Kevin MacLeod",
+      "tags": [
+        "Dark",
+        "Relaxed",
+        "Somber",
+        "Harpsichord",
+        "Classical"
+      ],
+      "duration_s": 128.39185,
+      "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Sinfonia%20Number%205.mp3",
+      "page_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100673",
+      "license_url": null,
+      "attribution_required": true,
+      "attribution_text": "Music: \"Sinfonia Number 5\" by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "commercial_ok": true,
+      "license": {
+        "name": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+        "url": "https://incompetech.com/music/royalty-free/licenses/",
+        "attribution_required": true,
+        "attribution_template": "Music: \"{title}\" by Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+        "allowed": [
+          "commercial use incl. monetised YouTube, film, games, broadcast — with credit"
+        ],
+        "not_allowed": [
+          "use without the credit (unless a paid no-attribution license is bought)"
+        ],
+        "note": "YouTube Content ID claims: see incompetech.com/music/royalty-free/youtube-contentid.html. Spotify podcast flags: dispute with licensor 'Kelvin Ruijters t/as Frequency'."
+      },
+      "downloaded_at": "2026-11-05T10:29:35+00:00"
+    },
+    {
+      "file": "mixkit-music-168-Staring-at-the-Night-Sky.mp3",
+      "path": "E:\\Adrian’s Chronicles\\pilot-1453\\assets\\audio\\music\\mixkit-music-168-Staring-at-the-Night-Sky.mp3",
+      "source": "mixkit",
+      "type": "music",
+      "id": "168",
+      "title": "Staring at the Night Sky",
+      "artist": "Alejandro Magaña (A. M.)",
+      "tags": [
+        "Film Score",
+        "Mysterious",
+        "Atmospheric",
+        "Piano",
+        "Relaxation",
+        "Human Drama"
+      ],
+      "duration_s": 142.02775,
+      "download_url": "https://assets.mixkit.co/music/168/168.mp3",
+      "page_url": null,
+      "license_url": null,
+      "attribution_required": false,
+      "attribution_text": null,
+      "commercial_ok": true,
+      "license": {
+        "name": "Mixkit Stock Music Free License",
+        "url": "https://mixkit.co/license/#musicFree",
+        "attribution_required": false,
+        "allowed": [
+          "YouTube/online video",
+          "social media",
+          "podcasts",
+          "online ads",
+          "education",
+          "commercial web use"
+        ],
+        "not_allowed": [
+          "TV/radio broadcast",
+          "CDs/DVDs",
+          "video games",
+          "remix into a music-only track",
+          "register in Content ID / any rights management service"
+        ],
+        "note": "If YouTube raises a claim, forward details to team@mixkit.co."
+      },
+      "downloaded_at": "2026-11-05T10:29:37+00:00"
+    }
+  ]
+}

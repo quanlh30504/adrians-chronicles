@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Pilot 1453</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{position:absolute;left:0;top:0;display:block}</style>
+</head><body><canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import { makeFilm } from './film.js';
+const ctx = document.getElementById('c').getContext('2d');
+await Promise.all(['600 40px "Bodoni Moda"', 'italic 400 40px "Bodoni Moda"', '400 40px "Pinyon Script"', '600 40px "Lora"', 'italic 400 40px "Lora"', '700 40px "Playfair Display"', 'italic 400 40px "Playfair Display"', '700 40px "Source Sans 3"'].map(f => document.fonts.load(f)));
+const meta = await (await fetch('archive/archive.json')).json().catch(() => null);
+let img = null;
+if (meta && meta.file) { img = new Image(); img.src = 'archive/' + meta.file; try { await img.decode(); } catch { img = null; } }
+const film = makeFilm({ img, meta });
+window.DUR = film.DUR; window.EV = film.EV; window.T = film.T;
+window.render = t => film.render(ctx, t);
+window.READY = true;
+</script></body></html>
